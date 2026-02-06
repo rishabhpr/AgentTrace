@@ -1,0 +1,14 @@
+{
+  "name": "@openclaw/agenttrace",
+  "version": "1.0.0",
+  "description": "OpenClaw AgentTrace plugin for capturing and analyzing agent execution traces",
+  "type": "module",
+  "devDependencies": {
+    "openclaw": "workspace:*"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

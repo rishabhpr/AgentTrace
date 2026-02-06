@@ -1,0 +1,31 @@
+{
+  "id": "agenttrace",
+  "name": "AgentTrace",
+  "description": "Capture, store, and query structured execution traces from AI agent sessions. Enables debugging, visualization, and analysis of multi-step agent workflows.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "storageDir": {
+        "type": "string",
+        "description": "Directory to store trace files (default: ~/.agenttrace)"
+      },
+      "defaultFormat": {
+        "type": "string",
+        "enum": ["json", "jsonl", "html"],
+        "default": "jsonl",
+        "description": "Default output format for traces"
+      },
+      "autoCapture": {
+        "type": "boolean",
+        "default": false,
+        "description": "Automatically capture all tool executions"
+      },
+      "retentionDays": {
+        "type": "number",
+        "default": 30,
+        "description": "Number of days to retain traces"
+      }
+    }
+  }
+}
