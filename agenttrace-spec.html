@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #1a1a1a;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #2563eb;
+    }
+    
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo span {
+      color: #1a1a1a;
+    }
+    
+    .tagline {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+    
+    h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2563eb;
+      margin: 16px 0 10px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    h3 {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 10px 0 6px 0;
+    }
+    
+    p {
+      margin-bottom: 8px;
+      color: #374151;
+    }
+    
+    .two-col {
+      display: flex;
+      gap: 24px;
+    }
+    
+    .col {
+      flex: 1;
+    }
+    
+    ul {
+      padding-left: 16px;
+      margin-bottom: 8px;
+    }
+    
+    li {
+      margin-bottom: 4px;
+      color: #374151;
+    }
+    
+    .highlight-box {
+      background: #f0f9ff;
+      border-left: 3px solid #2563eb;
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    
+    .use-case {
+      background: #fafafa;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    
+    .use-case-num {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      font-weight: 600;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 20px;
+      font-size: 10px;
+      margin-right: 8px;
+    }
+    
+    .use-case h3 {
+      display: inline;
+      margin: 0;
+    }
+    
+    .use-case p {
+      margin: 6px 0 0 28px;
+      font-size: 10px;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    
+    .tech-tag {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 9px;
+      font-weight: 500;
+    }
+    
+    .metrics {
+      display: flex;
+      justify-content: space-around;
+      margin: 12px 0;
+      text-align: center;
+    }
+    
+    .metric {
+      flex: 1;
+    }
+    
+    .metric-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    
+    .metric-label {
+      font-size: 9px;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+    
+    .footer {
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 9px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Agent<span>Trace</span></div>
+    <div class="tagline">Observability Platform for Autonomous AI Agents</div>
+  </div>
+
+  <h2>Overview</h2>
+  <p>AgentTrace is an open-source observability platform that captures, visualizes, and debugs AI agent decision-making in real-time. It provides complete visibility into agent reasoning chains, tool usage, and failure modes—solving the critical challenge of understanding <em>why</em> agents behave the way they do.</p>
+
+  <div class="highlight-box">
+    <strong>The Problem:</strong> AI agents are black boxes. When they fail, developers spend hours manually tracing logs. AgentTrace makes agent behavior transparent, debuggable, and reproducible.
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h2>Core Features</h2>
+      <ul>
+        <li><strong>Universal Instrumentation</strong> — Drop-in SDK for LangChain, CrewAI, AutoGen, or custom agents</li>
+        <li><strong>Decision Tree Visualization</strong> — See the full reasoning path as an interactive graph</li>
+        <li><strong>Trace Capture</strong> — Record prompts, LLM responses, tool calls, and outputs</li>
+        <li><strong>Cost Attribution</strong> — Track token usage and cost per step</li>
+        <li><strong>Failure Analysis</strong> — Auto-detect loops, hallucinations, and tool errors</li>
+        <li><strong>Session Replay</strong> — Reproduce any agent run deterministically</li>
+        <li><strong>Real-time Streaming</strong> — Watch agents execute live</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Architecture</h2>
+      <ul>
+        <li><strong>SDK Layer</strong> — Python decorators wrap agent functions with zero code change</li>
+        <li><strong>Collector</strong> — OpenTelemetry-compatible trace ingestion</li>
+        <li><strong>Storage</strong> — TimescaleDB for traces, Redis for real-time</li>
+        <li><strong>API</strong> — GraphQL for flexible querying</li>
+        <li><strong>Dashboard</strong> — React + D3.js trace visualization</li>
+      </ul>
+      
+      <h3>Tech Stack</h3>
+      <div class="tech-stack">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">TimescaleDB</span>
+        <span class="tech-tag">Redis</span>
+        <span class="tech-tag">GraphQL</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">OpenTelemetry</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Top 3 Use Cases</h2>
+  
+  <div class="use-case">
+    <span class="use-case-num">1</span>
+    <h3>Production Debugging & Root Cause Analysis</h3>
+    <p><strong>Scenario:</strong> A customer support agent gives an incorrect refund amount. Instead of digging through logs, the team opens AgentTrace, finds the session, and sees the exact reasoning chain: the agent misinterpreted a policy document retrieved via RAG. <strong>Time to resolution: 5 minutes instead of 2 hours.</strong> Teams use this for post-incident reviews, identifying prompt weaknesses, and validating fixes before redeployment.</p>
+  </div>
+  
+  <div class="use-case">
+    <span class="use-case-num">2</span>
+    <h3>Cost Optimization & Performance Tuning</h3>
+    <p><strong>Scenario:</strong> An enterprise running 100K agent calls/day notices costs doubling. AgentTrace's cost attribution reveals one tool is triggering excessive LLM retries—3.2 calls average instead of 1. The dashboard highlights which prompts cause loops and which model switches would save money. <strong>Result: 40% cost reduction</strong> by identifying and fixing inefficient agent paths.</p>
+  </div>
+  
+  <div class="use-case">
+    <span class="use-case-num">3</span>
+    <h3>Compliance Auditing & Explainability</h3>
+    <p><strong>Scenario:</strong> A fintech uses agents for loan decisions. Regulators require explainability. AgentTrace provides immutable audit trails showing every data source consulted, every reasoning step, and final decision logic. Teams export traces as compliance reports. <strong>Critical for:</strong> healthcare, finance, legal, and any regulated industry deploying autonomous agents.</p>
+  </div>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-value">&lt;5ms</div>
+      <div class="metric-label">Instrumentation Overhead</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">10M+</div>
+      <div class="metric-label">Traces/Day Capacity</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">3 min</div>
+      <div class="metric-label">Integration Time</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    AgentTrace — Open Source Agent Observability | github.com/rishabhpr/agenttrace | Apache 2.0 License
+  </div>
+</body>
+</html>
