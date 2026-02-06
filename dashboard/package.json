@@ -1,0 +1,13 @@
+{
+  "name": "agenttrace-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard for viewing AgentTrace execution traces",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["agenttrace", "dashboard", "tracing"],
+  "author": "Hal",
+  "license": "MIT"
+}
